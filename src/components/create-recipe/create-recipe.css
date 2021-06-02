@@ -1,0 +1,43 @@
+.create-recipe__icon {
+    position: relative;
+    transition: opacity .15s ease-in-out;
+}
+
+.create-recipe__plus-icon_green {
+    left: 8px;
+}
+
+.create-recipe__plus-icon_white {
+    right: 8px;
+    opacity: 0;
+}
+
+.btn-outline-success:hover > .create-recipe__plus-icon_green {
+    opacity: 0;
+}
+
+.btn-outline-success:hover > .create-recipe__plus-icon_white {
+    opacity: 1;
+}
+
+.btn-outline-danger {
+    border-right: none;
+    margin-right: 0.5px;
+}
+
+.create-recipe__bin-icon_red {
+    left: 8px;
+}
+
+.create-recipe__bin-icon_white {
+    right: 8px;
+    opacity: 0;
+}
+
+.btn-outline-danger:hover > .create-recipe__bin-icon_red {
+    opacity: 0;
+}
+
+.btn-outline-danger:hover > .create-recipe__bin-icon_white {
+    opacity: 1;
+}

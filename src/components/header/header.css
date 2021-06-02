@@ -1,0 +1,26 @@
+.header__login {
+    cursor: pointer;
+}
+
+.header__logout-button {
+    appearance: none;
+    color: black;
+    text-decoration: none;
+}
+
+.header__logout-button:hover {
+    color: black;
+}
+
+.input_failed {
+    border: 1px solid #dc3545;
+}
+
+.input__subtext {
+    display: none;
+}
+
+.input_failed + .input__subtext {
+    display: block;
+    color: #dc3545;
+}

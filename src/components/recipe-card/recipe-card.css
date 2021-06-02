@@ -1,0 +1,42 @@
+.recipe-card__icon-row {
+    grid-template-columns: 1fr 7fr 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe-card__icon {
+    display: block;
+    width: 22px;
+    position: relative;
+    transition: opacity 0.2s ease;
+}
+
+.recipe-card__bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.recipe-card__like-area {
+    cursor: pointer;
+}
+.recipe-card__like_filled {
+    opacity: 0;
+    bottom: 11px;
+}
+
+.recipe-card__like_empty {
+    top: 11px;
+}
+.recipe-card__like-area_liked > .recipe-card__like_filled {
+    opacity: 1;
+}
+
+.recipe-card__like-area_liked > .recipe-card__like_empty {
+    opacity: 0;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}

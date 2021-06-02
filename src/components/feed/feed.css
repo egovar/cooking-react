@@ -1,0 +1,23 @@
+#recipe_create {
+    position: fixed;
+    bottom: 100px;
+    right: calc((100vw - 1140px) / 4);
+    border-radius: 100%;
+    width: 60px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#recipe_create > img {
+    width: 25px;
+    filter: invert(100%);
+}
+
+.feed__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 1.5rem
+}
