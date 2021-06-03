@@ -47,6 +47,7 @@ export default class CreateRecipe extends Component {
 
     createRecipe = (e) => {
         e.preventDefault();
+        e.currentTarget.getElementsByClassName('create-recipe__submit')[0].disabled = true;
         fetch(`${server}/api/recipe/create`, {
             method: 'POST',
             headers: {
@@ -145,7 +146,9 @@ export default class CreateRecipe extends Component {
                     <label htmlFor="recipe_text" className="form-label m-0"><h4 className="h4 my-3">Подробно опишите
                         процесс приготовления блюда</h4></label>
                     <textarea className="form-control mb-3" id="recipe_text" rows="7" required></textarea>
-                    <button type="submit" className="btn btn-primary w-50 m-auto mb-5 d-block">Опубликовать</button>
+                    <button type="submit" className="btn btn-primary w-50 m-auto mb-5 d-block create-recipe__submit">
+                        Опубликовать
+                    </button>
                 </form>
             );
         } else {

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Categories = ({ user_role }) => {
     return (
-        <nav className=" categories col-8 nav nav-pills justify-content-around">
+        <nav className="categories col-8 nav nav-pills justify-content-around">
             <NavLink className="nav-link" to="/" exact>Популярные</NavLink>
             <NavLink className="nav-link" to="/new">Свежее</NavLink>
             <NavLink className="nav-link" to="/fast">До 30 минут</NavLink>

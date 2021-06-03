@@ -40,3 +40,12 @@
     height: 200px;
     object-fit: cover;
 }
+
+@media (max-width: 1200px) {
+    .recipe-card__icon-row {
+        grid-template-columns: 1fr 2fr;
+    }
+    span.d-block.w-50 {
+        display: none!important;
+    }
+}

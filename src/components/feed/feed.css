@@ -21,3 +21,15 @@
     grid-auto-rows: auto;
     gap: 1.5rem
 }
+
+@media (max-width: 1200px) {
+    .feed__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    #recipe_create {
+        bottom: 10vh;
+        right: 10vw;
+    }
+}

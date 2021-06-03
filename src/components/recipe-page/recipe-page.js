@@ -53,11 +53,8 @@ export default class RecipePage extends Component {
         })
             .then((result) => result.json()
                 .then((recipe_obj) => {
-                    console.log( recipe_obj );
                     const { recipe_id, recipe_ingredients, recipe_comments, recipe_title, recipe_author_login, recipe_likes,
                         recipe_text, recipe_post_time, recipe_picture, recipe_is_liked, recipe_cooking_time } = recipe_obj;
-                    console.log(recipe_ingredients, recipe_comments, recipe_title, recipe_author_login, recipe_likes,
-                        recipe_text, recipe_post_time, recipe_picture, recipe_is_liked, recipe_cooking_time );
 
                     this.recipe_ingredients_strings = recipe_ingredients.map(
                         ({ ingredient_name, ingredient_amount, ingredient_unit_name}, index) => {
@@ -90,6 +87,8 @@ export default class RecipePage extends Component {
 
     sendComment = (e) => {
         e.preventDefault();
+        const sendButton = e.currentTarget.getElementsByClassName('btn')[0]
+        sendButton.disabled = true;
 
         const comment_data = {
             comment_text: document.getElementById('comment_input').value,
@@ -112,6 +111,7 @@ export default class RecipePage extends Component {
                 const oldComments = this.state.comments;
                 oldComments.push(<Comment key={ Date.now() } comment_data={ comment_data }/>);
                 this.setState({ comments: [...oldComments] });
+                sendButton.disabled = false;
                 this.forceUpdate();
             })
             .catch((err) => console.log(err));

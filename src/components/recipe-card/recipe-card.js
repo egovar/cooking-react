@@ -11,7 +11,6 @@ import server from "../../config/server";
 
 const RecipeCard = ({ user_role, recipe_data: { recipe_id, recipe_title, recipe_picture, recipe_cooking_time,
     recipe_post_time, recipe_likes, recipe_author_login, recipe_author_id, recipe_is_liked }}) => {
-    console.log(user_role);
 
     const [likes, setLikes] = useState(recipe_likes);
 

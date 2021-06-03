@@ -56,9 +56,7 @@ export default class App extends Component {
               password: password
           })
       }).then((response) => {
-          console.log(response);
           response.json().then(({ id, token, login, role }) => {
-              console.log(id, token, login, role);
               if (id !== -1) {
                   this.setState((state) => {
                       localStorage.setItem('token', token);
@@ -73,7 +71,6 @@ export default class App extends Component {
                       });
                   });
                   auth_modal.hide();
-                  console.log(this.state);
                   window.location.href = '/';
               } else {
                   alert('Неверный логин/пароль');

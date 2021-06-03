@@ -24,3 +24,30 @@
     display: block;
     color: #dc3545;
 }
+
+.navbar-toggler {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .navbar__container_pc > .categories {
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: unset;
+    }
+
+    #navbar__collapse_mobile > .container > .categories {
+        margin: auto;
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+
+    .user__options {
+        width: 80%;
+        justify-content: flex-end;
+    }
+}

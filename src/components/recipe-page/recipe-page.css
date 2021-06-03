@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.recipe-page__top > img {
+    object-fit: cover;
+}
+
 .recipe-page__info {
     display: flex;
     flex-direction: column;
@@ -55,4 +59,10 @@
     position: relative;
     transition: opacity 0.2s ease;
     left: 5px;
+}
+
+@media (max-width: 1200px) {
+    .recipe-page__stat-icons {
+        width: 50%;
+    }
 }

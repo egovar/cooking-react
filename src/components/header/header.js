@@ -63,7 +63,7 @@ const Header = ({ onSignUp, onAuthClick, onSignIn, user_data : { id, login, toke
     const user_options = (login, role) => {
         if (role !== 'guest')  {
             return (
-                <div className="col-2">
+                <div className="user__options col-2">
                     <div className="d-flex justify-content-center">
                     <Link to="/user/me"><h3 className="h3 m-0 header__login">{ login }</h3></Link>
                     <button className="btn d-inline-flex align-items-center" onClick={ showEditProfileModal }>
@@ -84,17 +84,30 @@ const Header = ({ onSignUp, onAuthClick, onSignIn, user_data : { id, login, toke
         );
     }
     return (
-        <div className="navbar navbar-light bg-light header">
-            <div className="container">
-                <NavLink className="navbar-brand" to="/">
-                    <h1 className="h1">CooKing</h1>
-                </NavLink>
-                <Categories user_role={ role }/>
-                { user_options(login, role)}
-                <AuthModal onSignUp={ onSignUp } onSignIn={ onSignIn } onCheckLogin={ checkLogin }
-                           onCheckPasswords={ checkSamePasswords }/>
+        <header>
+            <div className="collapse" id="navbar__collapse_mobile">
+                <div className="container p-2 text-center">
+                    <h2 className="h1 m-auto text-center">CooKing</h2>
+                    <Categories user_role={ role }/>
+                </div>
             </div>
-        </div>
+            <div className="navbar navbar-light bg-light header">
+                <div className="container navbar__container_pc">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbar__collapse_mobile" aria-controls="navbarToggleExternalContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <NavLink className="navbar-brand" to="/">
+                        <h1 className="h1">CooKing</h1>
+                    </NavLink>
+                    <Categories user_role={ role }/>
+                    { user_options(login, role)}
+                    <AuthModal onSignUp={ onSignUp } onSignIn={ onSignIn } onCheckLogin={ checkLogin }
+                               onCheckPasswords={ checkSamePasswords }/>
+                </div>
+            </div>
+        </header>
     );
 }
 

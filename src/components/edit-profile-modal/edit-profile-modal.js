@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
+import { Modal } from 'bootstrap';
 
 import server from "../../config/server";
 
 const EditProfileModal = ({ onCheckLogin, onCheckPasswords }) => {
-
     useEffect(() => {
         const new_password = document.getElementById('edit-password__input_new-pass');
         const repeat_new_password = document.getElementById('edit-password__input_repeat-new-pass');
@@ -31,8 +31,10 @@ const EditProfileModal = ({ onCheckLogin, onCheckPasswords }) => {
         })
             .then((res) => res.json()
                 .then((obj) => {
-                    if (!obj) {
+                    if (obj.edit_password === false) {
                         alert('Неверно введен пароль')
+                    } else {
+                        window.location.reload();
                     }
                 }))
             .catch((err) => console.log(err));
@@ -53,9 +55,9 @@ const EditProfileModal = ({ onCheckLogin, onCheckPasswords }) => {
         })
             .then((res) => res.json()
                 .then((obj) => {
-                    console.log(obj);
                     localStorage.setItem('login', new_login);
                     localStorage.getItem('login');
+                    window.location.reload();
                 }))
             .catch((err) => console.log(err));
     }
